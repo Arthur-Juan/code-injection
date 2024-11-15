@@ -1,0 +1,18 @@
+[package]
+name = "dll-injection"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+winapi = { version = "0.3.9", features = ["minwindef", "ntdef", "winuser", "processthreadsapi", "winnt", "errhandlingapi", "memoryapi", "minwinbase", "handleapi", "libloaderapi", "synchapi", "winbase"] }
+
+
+[[bin]]
+name = "dll-injection"
+path = "src/main.rs"
+
+[lib]
+name = "dll_library"
+path = "src/dll.rs"
+crate-type = ["cdylib"]
