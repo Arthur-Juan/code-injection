@@ -1,0 +1,8 @@
+[package]
+name = "nt-api-injector"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+winapi = { version = "0.3.9", features = ["ntdef", "basetsd", "winnt", "minwindef", "libloaderapi", "handleapi", "processthreadsapi"] }
+hostname = "0.4.0"
