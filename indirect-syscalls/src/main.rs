@@ -8,8 +8,7 @@ mod indirect_syscalls;
 
 use crate::utils::check_hostname_is_valid;
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<String> = std::env::args().collect();
 
     if args.len() != 3 {
@@ -34,7 +33,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         "indirect" => {
             println!("[*] Running indirect syscall loader...");
-            indirect_loader::run_indirect_loader(target_pid).await?;
+            indirect_loader::run_indirect_loader(target_pid)?;
         }
         _ => {
             eprintln!("[-] Invalid mode. Use 'direct' or 'indirect'.");
