@@ -1,0 +1,3 @@
+[submodule "early-bird"]
+	path = early-bird
+	url = git@github.com:Arthur-Juan/early-bird.git
